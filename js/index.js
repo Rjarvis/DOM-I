@@ -39,13 +39,13 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //nav
 let navAnchors = [];
 navAnchors = document.querySelectorAll('a');
 
-// Work on this after MVP
+// Work on this after MVP;  you were trying to plug in the content via a loop that iterated the siteContent object and the anchors in the 
 // let navContent = Object.entries(siteContent.nav);
 
 navAnchors[0].textContent = siteContent["nav"]['nav-item-1'];
@@ -64,4 +64,23 @@ ctaTextChildren[1].textContent = siteContent['cta']['button'];
 callToActionChildren[1].setAttribute('src', siteContent['cta']['img-src']);
 
 //main content
-console.log(ctaTextChildren[0]);
+let mainContent = document.getElementsByClassName('main-content');
+let mainContentChildren = mainContent[0].children;
+let topContent = mainContentChildren[0];
+let topContentChildren = topContent.children;
+topContentChildren[0].children[0].textContent = siteContent['main-content']['features-h4'];
+topContentChildren[0].children[1].textContent = siteContent['main-content']['features-content'];
+topContentChildren[1].children[0].textContent = siteContent['main-content']['about-h4'];
+topContentChildren[1].children[1].textContent = siteContent['main-content']['about-content'];
+mainContentChildren[1].setAttribute('src', siteContent['main-content']['middle-img-src']);
+let bottomContent = mainContentChildren[2];
+let bottomContentChildren = bottomContent.children;
+bottomContentChildren[0].children[0].textContent = siteContent['main-content']['services-h4'];
+bottomContentChildren[0].children[1].textContent = siteContent['main-content']['services-content'];
+bottomContentChildren[1].children[0].textContent = siteContent['main-content']['product-h4'];
+bottomContentChildren[1].children[1].textContent = siteContent['main-content']['product-content'];
+bottomContentChildren[2].children[0].textContent = siteContent['main-content']['vision-h4'];
+bottomContentChildren[2].children[1].textContent = siteContent['main-content']['vision-content'];
+
+//footer
+console.log(bottomContentChildren);
