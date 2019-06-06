@@ -91,4 +91,7 @@ contactContent.children[0].textContent = siteContent['contact']['contact-h4'];
 contactContent.children[1].textContent = siteContent['contact']['address'];
 contactContent.children[2].textContent = siteContent['contact']['phone'];
 contactContent.children[3].textContent = siteContent['contact']['email'];
-console.log(contactContent);
+
+//footer
+let footerContent = document.getElementsByTagName('footer')[0].children[0].textContent = siteContent['footer']['copyright'];
+console.log(footerContent);
