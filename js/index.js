@@ -42,8 +42,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //nav
-let navAnchors = [];
-navAnchors = document.querySelectorAll('a');
+let navAnchors = document.querySelectorAll('a');
 
 // Work on this after MVP;  you were trying to plug in the content via a loop that iterated the siteContent object and the anchors in the 
 // let navContent = Object.entries(siteContent.nav);
@@ -54,6 +53,27 @@ navAnchors[2].textContent = siteContent['nav']['nav-item-3'];
 navAnchors[3].textContent = siteContent['nav']['nav-item-4'];
 navAnchors[4].textContent = siteContent['nav']['nav-item-5'];
 navAnchors[5].textContent = siteContent['nav']['nav-item-6'];
+
+//changing nav colors
+function setTextColor(color,obj){
+  for(i=0;i<obj.length;i++){
+    obj[i].style.color = color;
+  }
+}
+
+setTextColor('green',navAnchors);
+
+//adding anchors
+let b = document.createElement('a');
+let navInDOM = document.body.children[0].children[0].children[0];
+let lastAnchor = navInDOM.appendChild(document.createElement('a'));
+navInDOM.prepend(b);
+b.textContent = "The Beginning";
+lastAnchor.textContent = "The End";
+// navInDOM.prepend(document.createElement('a')).textContent = 'The Beginning';
+// navAnchors = navInDOM;
+
+console.log(navInDOM);
 
 //CTA
 let callToAction = document.getElementsByClassName('cta');
@@ -94,4 +114,3 @@ contactContent.children[3].textContent = siteContent['contact']['email'];
 
 //footer
 let footerContent = document.getElementsByTagName('footer')[0].children[0].textContent = siteContent['footer']['copyright'];
-console.log(footerContent);
