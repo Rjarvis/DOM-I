@@ -66,13 +66,16 @@ callToActionChildren[1].setAttribute('src', siteContent['cta']['img-src']);
 //main content
 let mainContent = document.getElementsByClassName('main-content');
 let mainContentChildren = mainContent[0].children;
+//main content : top content
 let topContent = mainContentChildren[0];
 let topContentChildren = topContent.children;
 topContentChildren[0].children[0].textContent = siteContent['main-content']['features-h4'];
 topContentChildren[0].children[1].textContent = siteContent['main-content']['features-content'];
 topContentChildren[1].children[0].textContent = siteContent['main-content']['about-h4'];
 topContentChildren[1].children[1].textContent = siteContent['main-content']['about-content'];
+//main content : mid image
 mainContentChildren[1].setAttribute('src', siteContent['main-content']['middle-img-src']);
+//main content : bottom content
 let bottomContent = mainContentChildren[2];
 let bottomContentChildren = bottomContent.children;
 bottomContentChildren[0].children[0].textContent = siteContent['main-content']['services-h4'];
@@ -82,5 +85,10 @@ bottomContentChildren[1].children[1].textContent = siteContent['main-content']['
 bottomContentChildren[2].children[0].textContent = siteContent['main-content']['vision-h4'];
 bottomContentChildren[2].children[1].textContent = siteContent['main-content']['vision-content'];
 
-//footer
-console.log(bottomContentChildren);
+//contact
+let contactContent = document.getElementsByClassName('contact')[0];
+contactContent.children[0].textContent = siteContent['contact']['contact-h4'];
+contactContent.children[1].textContent = siteContent['contact']['address'];
+contactContent.children[2].textContent = siteContent['contact']['phone'];
+contactContent.children[3].textContent = siteContent['contact']['email'];
+console.log(contactContent);
