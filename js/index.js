@@ -45,6 +45,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let navAnchors = [];
 navAnchors = document.querySelectorAll('a');
 
+// Work on this after MVP
+// let navContent = Object.entries(siteContent.nav);
+
 navAnchors[0].textContent = siteContent["nav"]['nav-item-1'];
 navAnchors[1].textContent = siteContent['nav']['nav-item-2'];
 navAnchors[2].textContent = siteContent['nav']['nav-item-3'];
@@ -53,5 +56,12 @@ navAnchors[4].textContent = siteContent['nav']['nav-item-5'];
 navAnchors[5].textContent = siteContent['nav']['nav-item-6'];
 
 //CTA
+let callToAction = document.getElementsByClassName('cta');
+let callToActionChildren = callToAction[0].children;
+let ctaTextChildren = callToActionChildren[0].children;
+ctaTextChildren[0].textContent = siteContent['cta']['h1'];
+ctaTextChildren[1].textContent = siteContent['cta']['button'];
+callToActionChildren[1].setAttribute('src', siteContent['cta']['img-src']);
 
-console.log(navAnchors[1]);
+//main content
+console.log(ctaTextChildren[0]);
